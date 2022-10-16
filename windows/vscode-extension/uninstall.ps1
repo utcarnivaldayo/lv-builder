@@ -8,7 +8,7 @@ $extension_ids = Import-Csv $extension_ids_path -Encoding UTF8
 $extension_ids | Format-Table
 
 # install
-foreach ($item in $extension_id) {
+foreach ($item in $extension_ids) {
     if ($item.id -ne "") {
         code --uninstall-extension $item.id
     }
