@@ -2,10 +2,13 @@
 
 Write-Output "--- Install App: Start! ---"
 
-$app_ids_path = $args[0]
+app_ids_path = $args[0]
 
-$app_ids = Import-Csv $app_ids_path -Encoding UTF8
+app_ids = Import-Csv $app_ids_path -Encoding UTF8
 $app_ids | Format-Table
+
+ids = @()
+paths = @()
 
 # read
 foreach ($item in $app_ids) {
