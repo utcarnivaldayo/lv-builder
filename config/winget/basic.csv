@@ -4,6 +4,5 @@ id,path
 "WinSCP.WinSCP",""
 "Git.Git",""
 "GitHub.cli",""
-"gnuplot.gnuplot","C:\Program Files\gnuplot\bin"
 "Microsoft.VisualStudioCode","C:\Users\$([System.Environment]::UserName)\AppData\Local\Programs\Microsoft VS Code",
 "Canonical.Multipass","C:\Program Files\Multipass\bin"
