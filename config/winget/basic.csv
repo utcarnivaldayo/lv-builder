@@ -4,5 +4,5 @@ id,path
 "WinSCP.WinSCP",""
 "Git.Git",""
 "GitHub.cli",""
-"Microsoft.VisualStudioCode","C:\Users\$([System.Environment]::UserName)\AppData\Local\Programs\Microsoft VS Code",
+"Microsoft.VisualStudioCode","$HOME\AppData\Local\Programs\Microsoft VS Code",
 "Canonical.Multipass","C:\Program Files\Multipass\bin"
