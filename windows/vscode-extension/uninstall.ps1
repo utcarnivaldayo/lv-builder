@@ -2,9 +2,9 @@
 
 Write-Output "--- Uninstall VSCode Extension: Start! ---"
 
-extension_ids_path = $args[0]
+$extension_ids_path = $args[0]
 
-extension_ids = Import-Csv $extension_ids_path -Encoding UTF8
+$extension_ids = Import-Csv $extension_ids_path -Encoding UTF8
 $extension_ids | Format-Table
 
 # install
