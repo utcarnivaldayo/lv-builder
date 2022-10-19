@@ -1,0 +1,12 @@
+#cloud-config
+
+timezone: Asia/Tokyo
+locale: ja_JP.utf8
+
+users:
+  - name: ubuntu
+    sudo: ALL=(ALL) NOPASSWD:ALL
+
+runcmd:
+  - sudo apt upgrade && sudo apt update
+  - sudo apt -y install nano curl jq nodejs npm
