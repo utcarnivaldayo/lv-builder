@@ -10,3 +10,8 @@ users:
 runcmd:
   - sudo apt upgrade && sudo apt update
   - sudo apt -y install nano curl jq nodejs npm
+  - sudo npm -g install n
+  - sudo n stable
+  - sudo apt purge nodejs npm
+  - sudo apt autoremove
+  - sudo apt clear all

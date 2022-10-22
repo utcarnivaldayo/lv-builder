@@ -9,5 +9,4 @@ users:
 
 runcmd:
   - sudo apt upgrade && sudo apt update
-  - sudo apt -y install nano curl jq build-essential
-  - curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  - sudo apt -y install nano curl jq build-essential rust-all
