@@ -1,4 +1,4 @@
-# --- multipass ---
+# --- multipass launch---
 Write-Output "--- Multipass: Start! ---"
 
 $instance_name = $args[0]
