@@ -70,6 +70,7 @@ vscodeに推奨される拡張機能を一括インストールします。各�
 vscode-icons-team.vscode-icons
 yzhang.markdown-all-in-one
 mosapride.zenkaku
+oderwat.indent-rainbow
 VisualStudioExptTeam.vscodeintellicode
 ms-vsliveshare.vsliveshare
 ms-vscode-remote.remote-ssh

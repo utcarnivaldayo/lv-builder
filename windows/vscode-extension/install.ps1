@@ -2,15 +2,12 @@
 
 Write-Output "--- Install VSCode Extension: Start! ---"
 
-$extension_ids_path = $args[0]
-
-$extension_ids = Import-Csv $extension_ids_path -Encoding UTF8
-$extension_ids | Format-Table
+$extension_ids = $args[0]
 
 # install
 foreach ($item in $extension_ids) {
-    if ($item.id -ne "") {
-        code --install-extension $item.id
+    if ($item -ne "") {
+        code --install-extension $item
     }
 }
 

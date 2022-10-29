@@ -7,9 +7,6 @@ echo "--- Uninstall VSCode Extension: Start! ---"
 vscode_extensions="${1}"
 
 while read -r line; do
-    if [[ "${line}" = id ]]; then
-        continue
-    fi
     if [[ "${line}" != "" ]]; then
         code --uninstall-extension "${line}"
     fi
