@@ -1,3 +1,9 @@
 .DS_Store
-/workspace
+/workspace/cpp/*
+/workspace/nodejs/*
+/workspace/rust/*
+!/workspace/cpp/README.md
+!/workspace/nodejs/README.md
+!/workspace/rust/README.md
 /test
+!.gitkeep

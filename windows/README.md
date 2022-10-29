@@ -30,15 +30,15 @@ winget install --id Microsoft.Powershell --source winget
 
 
 ### 4. msstoreの承認
-msstoreからアプリケーションをインストールには認証が必要です。
+wingetでmsstoreからアプリケーションをインストールするには認証が必要です。
 ![msstoreの承認](./img/msstore-approve.png)
 
 1. 下記コマンドをpowershell7上で実行
     ```powershell
-    winget install -e --id Google.Chrome
+    winget install -e --id Discord.Discord
     ``` 
 2. "すべてのソーズ条件に同意しますか？"と聞かれるので`Y`を入力
-3. 既にChromeがインストールされている状態であれば、`ctrl + C`でインストールをキャンセル
+3. 既にDiscordがインストールされている状態であれば、`ctrl + C`でインストールをキャンセル
 ### 5. Hyper-vの有効化
 次の条件のいずれかを満たしている場合この作業は必要ありません。
 
@@ -49,9 +49,12 @@ msstoreからアプリケーションをインストールには認証が必要�
 1. `windows/multipass/enable-hyper-v.bat`を管理者権限で実行（この作業を行うとOSが再起動するため、`enable-hyper-v.bat`の実行前に他のアプリケーションを終了しておく）
 2. Hyper-vの有効化を次の手順で確認
 ![Hyper-vの有効化確認](./img/hyperv-enable-check.png)
-    1. 
+    1. スタートを右クリック
+    2. アプリと機能をクリック
+    3. "Windowsの機能の有効化または無効化"をクリック
+    4. "Hyper-V Hypervisor"にレ点が入っていることを確認
 ## ローカル環境の構築
-ローカル環境に必要なソフトウェアを一括インストールします。各自でソフトウェアのリストのファイルを作成することでカスタムインストールも可能です。`local-basic.bat`では次のアプリケーションのインストールを行います。
+ローカル環境に必要なソフトウェアを一括インストールします。各自でソフトウェアのリストのファイルを作成することでカスタムインストールも可能です。`windows/winget/basic.bat`を実行することで次のアプリケーションのインストールが可能です。
 ```
 Google.Chrome
 Discord.Discord
@@ -61,9 +64,8 @@ GitHub.cli
 Microsoft.VisualStudioCode
 Canonical.Multipass
 ```
-
 ## VS Code Extensionのインストール
-vscodeに推奨される拡張機能を一括インストールします。各自で拡張機能リストのファイルを作成することでカスタムインストールも可能です。`windows/vscode-extension/vscode-extension-basic.bat`では次の拡張機能のインストールを行います。
+vscodeに推奨される拡張機能を一括インストールします。各自で拡張機能リストのファイルを作成することでカスタムインストールも可能です。`windows/vscode-extension/basic.bat`を実行することで次の拡張機能のインストールが可能です。
 ```
 vscode-icons-team.vscode-icons
 yzhang.markdown-all-in-one
@@ -85,16 +87,18 @@ Gruntfuggly.todo-tree
 
 ## 仮想環境の構築
 multipassによりubuntu仮想環境を構築します。
-構築環境としては、c++・node・rustを
-
+各バッチ`cpp.bat` / `nodejs.bat` / `rust.bat`を実行することでc++ / nodejs / rustの仮想環境を構築できます。
+バッチを利用する場合、`workspace`下のディレクトリがマウントされるように動作します。
+任意のディレクトリをマウントしたい場合は下記コマンドを`windows/multipass` ディレクトリ下で実行してください。
 - c++環境
-```powershell
-```
-- node環境
-```powershell
-
-```
+    ```powershell
+    pwsh ./launch.ps1 cpp 2 24G 4G ../../config/multipass/cpp.yaml 22.04 <マウント対象フォルダへのローカル環境のフルパス> <マウントされるディレクトリへの仮想環境のフルパス>
+    ```
+- nodejs環境
+    ```powershell
+    pwsh ./launch.ps1 nodejs 2 24G 4G ../../config/multipass/nodejs.yaml 22.04 <マウント対象フォルダへのローカル環境のフルパス> <マウントされるディレクトリへの仮想環境のフルパス>
+    ```
 - rust環境
-```powershell
-
-```
+    ```powershell
+    pwsh ./launch.ps1 rust 2 24G 4G ../../config/multipass/rust.yaml 22.04 <マウント対象フォルダへのローカル環境のフルパス> <マウントされるディレクトリへの仮想環境のフルパス>
+    ```
