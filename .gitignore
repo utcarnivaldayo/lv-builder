@@ -2,8 +2,10 @@
 /workspace/cpp/*
 /workspace/nodejs/*
 /workspace/rust/*
+/workspace/cs/*
 !/workspace/cpp/README.md
 !/workspace/nodejs/README.md
 !/workspace/rust/README.md
+!/workspace/cs/README.md
 /test
 !.gitkeep
