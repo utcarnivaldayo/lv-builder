@@ -83,6 +83,7 @@ mhutchie.git-graph
 hediet.vscode-drawio
 janisdd.vscode-edit-csv
 Gruntfuggly.todo-tree
+jebbs.plantuml
 ```
 
 
