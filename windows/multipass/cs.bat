@@ -1,0 +1,1 @@
+pwsh cs.ps1

@@ -1,0 +1,1 @@
+pwsh ./cpp.ps1

@@ -9,4 +9,4 @@ users:
 
 runcmd:
   - sudo apt upgrade && sudo apt update
-  - sudo apt -y install nano curl jq
+  - sudo apt -y install nano curl jq dotnet6

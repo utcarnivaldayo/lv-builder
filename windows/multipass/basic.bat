@@ -1,0 +1,1 @@
+pwsh ./basic.ps1
