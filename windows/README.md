@@ -89,12 +89,16 @@ jebbs.plantuml
 
 ## 仮想環境の構築
 multipassによりubuntu仮想環境を構築します。
-各バッチ`cpp.bat` / `nodejs.bat` / `rust.bat`を実行することでc++ / nodejs / rustの仮想環境を構築できます。
+各バッチ`cpp.bat` / `cs.bat` / `nodejs.bat` / `rust.bat`を実行することでc++ / cs / nodejs / rustの仮想環境を構築できます。
 バッチを利用する場合、`workspace`下のディレクトリがマウントされるように動作します。
-任意のディレクトリをマウントしたい場合は下記コマンドを`windows/multipass` ディレクトリ下で実行してください。
+任意のディレクトリをマウントしたい・リソース割り振りを変更したい場合は下記コマンドを`windows/multipass` ディレクトリ下で実行してください。
 - c++環境
     ```powershell
     pwsh ./launch.ps1 cpp 2 24G 4G ../../config/multipass/cpp.yaml 22.04 <マウント対象フォルダへのローカル環境のフルパス> <マウントされるディレクトリへの仮想環境のフルパス>
+    ```
+- cs環境(x64のみ)
+    ```powershell
+    pwsh ./launch.ps1 cpp 2 24G 4G ../../config/multipass/cs.yaml 22.04 <マウント対象フォルダへのローカル環境のフルパス> <マウントされるディレクトリへの仮想環境のフルパス>
     ```
 - nodejs環境
     ```powershell
