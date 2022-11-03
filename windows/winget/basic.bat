@@ -1,1 +1,1 @@
-pwsh ./install.ps1 ../../config/winget/basic.csv
+pwsh -ExecutionPolicy Bypass ./install.ps1 ../../config/winget/basic.csv

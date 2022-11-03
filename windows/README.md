@@ -81,22 +81,54 @@ jebbs.plantuml
 
 ## 仮想環境の構築
 multipassによりubuntu仮想環境を構築します。
-各バッチ`cpp.bat` / `cs.bat` / `nodejs.bat` / `rust.bat` / `docker.bat` / `python.bat`を管理者権限のpowershellからコマンド実行することでc++ / cs / nodejs / rust / docker / pythonの仮想環境を構築できます。
-バッチを利用する場合、`workspace`下のディレクトリがマウントされるように動作します。
-任意のディレクトリをマウントしたい・リソース割り振りを変更したい場合は下記コマンドを`windows/multipass` ディレクトリ下で実行してください。
+各バッチ`cpp.bat` / `cs.bat` / `nodejs.bat` / `rust.bat` / `docker.bat` / `python.bat`を管理者として開いたpowershellからコマンド実行することでc++ / cs / nodejs / rust / docker / pythonの仮想環境を構築できます。
+```powershell
+./cpp.bat
+```
+```powershell
+./cs.bat
+```
+```powershell
+./nodejs.bat
+```
+```powershell
+./rust.bat
+```
+```powershell
+./docker.bat
+```
+```powershell
+./python.bat
+```
+また、上記のバッチを利用する場合、`workspace`下のmultipassインスタンス名に対応するディレクトリがマウントされるように動作します。
+任意のディレクトリをマウントしたい・リソース割り振りを変更したい場合は上記バッチの代わりに各環境に対する下記のコマンドを`windows/multipass` ディレクトリ下で実行してください。(リソースのデフォルト値は`cpu: 2`, `disksize: 24[GByte]`, `memory: 4[GByte]`)
 - c++環境
     ```powershell
-    pwsh ./launch.ps1 cpp 2 24G 4G ../../config/multipass/cpp/cpp.yaml 22.04 <マウント対象フォルダへのローカル環境のフルパス> <マウントされるディレクトリへの仮想環境のフルパス>
+    pwsh -ExecutionPolicy Bypass ./launch.ps1 cpp 2 24G 4G ../../config/multipass/cpp/cpp.yaml 22.04 <マウント対象フォルダへののフルパス> /home/ubuntu/synced-cpp
     ```
 - cs環境(x64のみ)
     ```powershell
-    pwsh ./launch.ps1 cs 2 24G 4G ../../config/multipass/cs/cs.yaml 22.04 <マウント対象フォルダへのローカル環境のフルパス> <マウントされるディレクトリへの仮想環境のフルパス>
+    pwsh -ExecutionPolicy Bypass ./launch.ps1 cs 2 24G 4G ../../config/multipass/cs/cs.yaml 22.04 <マウント対象フォルダへのフルパス> /home/ubuntu/synced-cs
     ```
 - nodejs環境
     ```powershell
-    pwsh ./launch.ps1 nodejs 2 24G 4G ../../config/multipass/nodejs/nodejs.yaml 22.04 <マウント対象フォルダへのローカル環境のフルパス> <マウントされるディレクトリへの仮想環境のフルパス>
+    pwsh -ExecutionPolicy Bypass ./launch.ps1 nodejs 2 24G 4G ../../config/multipass/nodejs/nodejs.yaml 22.04 <マウント対象フォルダへのフルパス> /home/ubuntu/synced-nodejs
     ```
 - rust環境
     ```powershell
-    pwsh ./launch.ps1 rust 2 24G 4G ../../config/multipass/rust/rust.yaml 22.04 <マウント対象フォルダへのローカル環境のフルパス> <マウントされるディレクトリへの仮想環境のフルパス>
+    pwsh -ExecutionPolicy Bypass ./launch.ps1 rust 2 24G 4G ../../config/multipass/rust/rust.yaml 22.04 <マウント対象フォルダへのフルパス> /home/ubuntu/synced-rust
+
+    ```
+- docker環境
+    ```powershell
+    pwsh -ExecutionPolicy Bypass ./launch.ps1 docker 2 24G 4G ../../config/multipass/docker/docker.yaml 22.04 <マウント対象フォルダへのフルパス> /home/ubuntu/synced-docker
+    multipass exec docker -- mkdir /home/ubuntu/init
+    multipass transfer (Convert-Path ../../config/multipass/docker)/install-docker.sh docker:/home/ubuntu/init/
+    ```
+- python環境
+    ```powershell
+    pwsh -ExecutionPolicy Bypass ./launch.ps1 python 2 24G 4G ../../config/multipass/python/python.yaml 22.04 <マウント対象フォルダへのフルパス> /home/ubuntu/synced-python
+    multipass exec python -- mkdir /home/ubuntu/init
+    multipass transfer (Convert-Path ../../config/multipass/python)/install-pyenv.sh python:/home/ubuntu/init/
+    multipass transfer (Convert-Path ../../config/multipass/python)/install-python.sh python:/home/ubuntu/init/
     ```
