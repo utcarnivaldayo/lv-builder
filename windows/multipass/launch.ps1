@@ -15,11 +15,11 @@ multipass launch --cpus $cpus --disk $disk --mem $mem --cloud-init $cloud_init_p
 multipass exec $instance_name -- mkdir $virtual_workdir_fullpath
 multipass stop $instance_name
 multipass set local.privileged-mounts=true
+sleep 1
 
 # ensure multipassd is running
 Restart-Service -Name multipass
-
-sleep 3
+sleep 10
 
 # mount
 multipass mount $local_workdir_fullpath ${instance_name}:$virtual_workdir_fullpath
