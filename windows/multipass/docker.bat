@@ -1,1 +1,1 @@
-pwsh ./docker.ps1
+pwsh -ExecutionPolicy Bypass ./docker.ps1

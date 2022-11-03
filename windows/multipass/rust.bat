@@ -1,1 +1,1 @@
-pwsh rust.ps1
+pwsh -ExecutionPolicy Bypass rust.ps1

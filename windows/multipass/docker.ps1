@@ -6,7 +6,7 @@ $virtual_workspace_dir = "/home/ubuntu/synced-${instance_name}"
 $local_config_dir = (Convert-Path ../../config/multipass/${instance_name})
 $init_files = @("install-docker.sh")
 
-pwsh ./launch.ps1 "${instance_name}" "2" "40G" "4G" "../../config/multipass/${instance_name}.yaml" "22.04" "$local_workspace_dir" "$virtual_workspace_dir"
+pwsh -ExecutionPolicy Bypass ./launch.ps1 "${instance_name}" "2" "40G" "4G" "../../config/multipass/${instance_name}.yaml" "22.04" "$local_workspace_dir" "$virtual_workspace_dir"
 sleep 3
 multipass start "${instance_name}"
 multipass exec "${instance_name}" -- mkdir "${virtual_home}/init"

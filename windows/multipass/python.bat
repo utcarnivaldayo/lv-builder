@@ -1,1 +1,1 @@
-pswh ./python.ps1
+pswh -ExecutionPolicy Bypass ./python.ps1

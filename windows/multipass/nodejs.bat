@@ -1,1 +1,1 @@
-pwsh nodejs.ps1
+pwsh -ExecutionPolicy Bypass nodejs.ps1

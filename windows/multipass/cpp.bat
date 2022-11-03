@@ -1,1 +1,1 @@
-pwsh ./cpp.ps1
+pwsh -ExecutionPolicy Bypass ./cpp.ps1

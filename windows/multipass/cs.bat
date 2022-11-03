@@ -1,1 +1,1 @@
-pwsh cs.ps1
+pwsh -ExecutionPolicy Bypass cs.ps1

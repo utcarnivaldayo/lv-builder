@@ -1,1 +1,1 @@
-pwsh ./basic.ps1
+pwsh -ExecutionPolicy Bypass ./basic.ps1
