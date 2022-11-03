@@ -2,9 +2,14 @@
 local and virtual development environment builder
 
 ## 概要
-ローカル環境へのアプリケーションの一括インストールおよびvscodeのextensionの一括インストール、仮想環境におけるc++ / c# (.net) / rust / node / pythonなどの開発環境を容易に構築するためのバッチ群です。
+ローカル環境へのアプリケーションの一括インストールおよびvscodeのextensionの一括インストール、仮想環境におけるc++ / c# (.net) / rust / nodejs / pythonなどの開発環境を容易に構築するためのバッチ群です。
 
 ## 動作環境
+
+#### mac
+- apple silicone
+  - x64は動作確認環境がないからわからないけど、いけるはず...
+
 
 #### windows
 - windows10/11 64bit Home または Pro

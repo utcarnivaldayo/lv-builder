@@ -41,18 +41,24 @@ wingetでmsstoreからアプリケーションをインストールするには�
 3. 既にDiscordがインストールされている状態であれば、`ctrl + C`でインストールをキャンセル
 ### 5. Hyper-vの有効化
 次の条件のいずれかを満たしている場合この作業は必要ありません。
+Pro版の場合は下記の`Enable-WindowsOptionalFeature`コマンドでHyper-vの有効化を行なってください。
 
 - multipassによる仮想環境の構築が不要
 - Virtual Boxが既にインストール済み
-- OSがWindows10・11 Pro
-
+　
 1. `windows/multipass/enable-hyper-v.bat`を管理者権限で実行（この作業を行うとOSが再起動するため、`enable-hyper-v.bat`の実行前に他のアプリケーションを終了しておく）
 2. Hyper-vの有効化を次の手順で確認
 ![Hyper-vの有効化確認](./img/hyperv-enable-check.png)
     1. スタートを右クリック
-    2. アプリと機能をクリック
-    3. "Windowsの機能の有効化または無効化"をクリック
-    4. "Hyper-V Hypervisor"にレ点が入っていることを確認
+    2. "アプリと機能"をクリック
+    3. "プログラムと機能"を選択
+    4. "Windowsの機能の有効化または無効化"をクリック
+    5. "Hyper-V Hypervisor"にレ点が入っていることを確認
+
+- Pro版は管理者権限で実行したpowershellで下記コマンドを実行
+  ```poweshell
+  PS C:\Windows\System32> Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+  ```
 ## ローカル環境の構築
 ローカル環境に必要なソフトウェアを一括インストールします。各自でソフトウェアのリストのファイルを作成することでカスタムインストールも可能です。`windows/winget/basic.bat`を実行することで次のアプリケーションのインストールが可能です。
 ```
@@ -65,7 +71,7 @@ Microsoft.VisualStudioCode
 Canonical.Multipass
 ```
 ## VS Code Extensionのインストール
-vscodeに推奨される拡張機能を一括インストールします。各自で拡張機能リストのファイルを作成することでカスタムインストールも可能です。`windows/vscode-extension/basic.bat`を実行することで次の拡張機能のインストールが可能です。
+vscodeに推奨される拡張機能を一括インストールします。各自で拡張機能リストのファイルを作成することでカスタムインストールも可能です。`windows/vscode-extension/basic.bat`を実行することで次の拡張機能のインストールが可能です。`cpp.bat`や`rust.bat`を実行した場合、各言語のExtensionも`basic.bat`に加えて追加されます。
 ```
 vscode-icons-team.vscode-icons
 yzhang.markdown-all-in-one
@@ -89,7 +95,7 @@ jebbs.plantuml
 
 ## 仮想環境の構築
 multipassによりubuntu仮想環境を構築します。
-各バッチ`cpp.bat` / `cs.bat` / `nodejs.bat` / `rust.bat`を実行することでc++ / cs / nodejs / rustの仮想環境を構築できます。
+各バッチ`cpp.bat` / `cs.bat` / `nodejs.bat` / `rust.bat` / `docker.bat` / `python.bat`を実行することでc++ / cs / nodejs / rust / docker / pythonの仮想環境を構築できます。
 バッチを利用する場合、`workspace`下のディレクトリがマウントされるように動作します。
 任意のディレクトリをマウントしたい・リソース割り振りを変更したい場合は下記コマンドを`windows/multipass` ディレクトリ下で実行してください。
 - c++環境
