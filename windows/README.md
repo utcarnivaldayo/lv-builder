@@ -95,7 +95,7 @@ jebbs.plantuml
 
 ## 仮想環境の構築
 multipassによりubuntu仮想環境を構築します。
-各バッチ`cpp.bat` / `cs.bat` / `nodejs.bat` / `rust.bat` / `docker.bat` / `python.bat`を実行することでc++ / cs / nodejs / rust / docker / pythonの仮想環境を構築できます。
+各バッチ`cpp.bat` / `cs.bat` / `nodejs.bat` / `rust.bat` / `docker.bat` / `python.bat`を管理者権限で実行することでc++ / cs / nodejs / rust / docker / pythonの仮想環境を構築できます。
 バッチを利用する場合、`workspace`下のディレクトリがマウントされるように動作します。
 任意のディレクトリをマウントしたい・リソース割り振りを変更したい場合は下記コマンドを`windows/multipass` ディレクトリ下で実行してください。
 - c++環境
