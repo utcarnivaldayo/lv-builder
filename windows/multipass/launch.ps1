@@ -17,7 +17,7 @@ multipass stop $instance_name
 multipass set local.privileged-mounts=true
 
 # ensure multipassd is running
-Restart-Service -Name multipassd
+Restart-Service -Name multipass
 
 # mount
 multipass mount "$local_workdir_fullpath" "$instance_name":"$virtual_workdir_fullpath"
