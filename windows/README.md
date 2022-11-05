@@ -57,7 +57,7 @@ Microsoft.VisualStudioCode
 Canonical.Multipass
 ```
 ## VS Code Extensionのインストール
-vscodeに推奨される拡張機能を一括インストールします。各自で拡張機能リストのファイルを作成することでカスタムインストールも可能です。`windows/vscode-extension/basic.bat`を実行することで次の拡張機能のインストールが可能です。`cpp.bat`や`rust.bat`を実行した場合、各言語のExtensionも`basic.bat`に加えて追加されます。
+vscodeに推奨される拡張機能を一括インストールします。`windows/vscode-extension/basic.bat`を実行することで次の拡張機能のインストールが可能です。`cpp.bat`や`rust.bat`を実行した場合、各言語のExtensionも`basic.bat`に加えて追加されます。
 ```
 vscode-icons-team.vscode-icons
 yzhang.markdown-all-in-one
@@ -81,7 +81,7 @@ jebbs.plantuml
 
 ## 仮想環境の構築
 multipassによりubuntu仮想環境を構築します。
-各バッチ`cpp.bat` / `cs.bat` / `nodejs.bat` / `rust.bat` / `docker.bat` / `python.bat`を管理者として開いたpowershellからコマンド実行することでc++ / cs / nodejs / rust / docker / pythonの仮想環境を構築できます。
+`windows/multipas`ディレクトリ下の各バッチ`cpp.bat` / `cs.bat` / `nodejs.bat` / `rust.bat` / `docker.bat` / `python.bat`を管理者として開いたpowershellからコマンド実行することでc++ / cs / nodejs / rust / docker / pythonの仮想環境をそれぞれ構築できます。
 ```powershell
 ./cpp.bat
 ```
@@ -121,7 +121,7 @@ multipassによりubuntu仮想環境を構築します。
     ```
 - docker環境
     ```powershell
-    pwsh -ExecutionPolicy Bypass ./launch.ps1 docker 2 24G 4G ../../config/multipass/docker/docker.yaml 22.04 <マウント対象フォルダへのフルパス> /home/ubuntu/synced-docker
+    pwsh -ExecutionPolicy Bypass ./launch.ps1 docker 2 40G 4G ../../config/multipass/docker/docker.yaml 22.04 <マウント対象フォルダへのフルパス> /home/ubuntu/synced-docker
     multipass exec docker -- mkdir /home/ubuntu/init
     multipass transfer (Convert-Path ../../config/multipass/docker)/install-docker.sh docker:/home/ubuntu/init/
     ```
