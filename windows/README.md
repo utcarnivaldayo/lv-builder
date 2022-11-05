@@ -45,7 +45,7 @@ Pro版の場合は下記の`Enable-WindowsOptionalFeature`コマンドでHyper-v
   ```poweshell
   PS C:\Windows\System32> Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
   ```
-## ローカル環境の構築
+## 1. ローカル環境の構築
 ローカル環境に必要なソフトウェアを一括インストールします。各自でソフトウェアのリストのファイルを作成することでカスタムインストールも可能です。`windows/winget/basic.bat`を実行することで次のアプリケーションのインストールが可能です。
 ```
 Google.Chrome
@@ -56,7 +56,7 @@ GitHub.cli
 Microsoft.VisualStudioCode
 Canonical.Multipass
 ```
-## VS Code Extensionのインストール
+## 2. VS Code Extensionのインストール
 vscodeに推奨される拡張機能を一括インストールします。`windows/vscode-extension/basic.bat`を実行することで次の拡張機能のインストールが可能です。`cpp.bat`や`rust.bat`を実行した場合、各言語のExtensionも`basic.bat`に加えて追加されます。
 ```
 vscode-icons-team.vscode-icons
@@ -79,7 +79,7 @@ jebbs.plantuml
 ```
 
 
-## 仮想環境の構築
+## 3. 仮想環境の構築
 multipassによりubuntu仮想環境を構築します。
 `windows/multipas`ディレクトリ下の各バッチ`cpp.bat` / `cs.bat` / `nodejs.bat` / `rust.bat` / `docker.bat` / `python.bat`を管理者として開いたpowershellからコマンド実行することでc++ / cs / nodejs / rust / docker / pythonの仮想環境をそれぞれ構築できます。
 ```powershell

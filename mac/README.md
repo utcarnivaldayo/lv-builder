@@ -8,7 +8,7 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-## ローカル環境の構築
+## 1. ローカル環境の構築
 ローカル環境に必要なソフトウェアを一括インストールします。`mac/brew/basic.sh`を実行することで次のアプリケーションのインストールが可能です。
 ```
 bash ./basic.sh
@@ -22,7 +22,7 @@ visual-studio-code
 multipass
 iterm2
 ```
-## VS Code Extensionのインストール
+## 2. VS Code Extensionのインストール
 vscodeに推奨される拡張機能を一括インストールします。各自で拡張機能リストのファイルを作成することでカスタムインストールも可能です。`mac/vscode-extension/basic.sh`を実行することで次の拡張機能のインストールが可能です。`cpp.sh`や`rust.sh`を実行した場合、各言語のExtensionも`basic.sh`に加えて追加されます。
 ```
 bash ./basic.sh
@@ -47,7 +47,7 @@ Gruntfuggly.todo-tree
 jebbs.plantuml
 ```
 
-## 仮想環境の構築
+## 3. 仮想環境の構築
 
 ### 1. multipassインスタンスアクセスの有効化
 macのファイアウォールが有効化されていると、multipassインスタンスを起動できない問題があるため、ファイアウォールの無効化を行います。インスタンス起動後はオンに戻してもOKです。
