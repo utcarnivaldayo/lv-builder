@@ -1,8 +1,10 @@
 .DS_Store
-/workspace/cpp/*
-/workspace/nodejs/*
-/workspace/rust/*
-/workspace/cs/*
+/workspace/cpp/**
+/workspace/nodejs/**
+/workspace/rust/**
+/workspace/cs/**
+/workspace/docker/**
+/workspace/python/**
 !/workspace/cpp/README.md
 !/workspace/nodejs/README.md
 !/workspace/rust/README.md
