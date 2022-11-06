@@ -131,4 +131,5 @@ multipassによりubuntu仮想環境を構築します。
     multipass exec python -- mkdir /home/ubuntu/init
     multipass transfer (Convert-Path ../../config/multipass/python)/install-pyenv.sh python:/home/ubuntu/init/
     multipass transfer (Convert-Path ../../config/multipass/python)/install-python.sh python:/home/ubuntu/init/
+    multipass transfer (Convert-Path ../../config/multipass/python)/install-discord-bot.sh python:/home/ubuntu/init/
     ```

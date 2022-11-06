@@ -124,4 +124,5 @@ bash ./python.sh
     multipass exec python -- mkdir /home/ubuntu/init
     multipass transfer ../../config/multipass/python/install-pyenv.sh python:/home/ubuntu/init/
     multipass transfer ../../config/multipass/python/install-python.sh python:/home/ubuntu/init/
+    transfer ../../config/multipass/python/install-discord-bot.sh python:/home/ubuntu/init/
     ```

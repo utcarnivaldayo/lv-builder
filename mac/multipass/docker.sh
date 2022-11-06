@@ -16,7 +16,7 @@ init_files=("install-docker.sh")
 
 cd "${current_dir}"
 bash ./launch.sh "${instance_name}" "2" "40G" "4G" "${local_config_dir}/${instance_name}.yaml" "22.04" "${local_workspace_dir}" "${virtual_workspace_dir}"
-sleep 3
+sleep 10
 multipass start "${instance_name}"
 multipass exec "${instance_name}" -- mkdir "${virtual_home}/init"
 for i in "${init_files[@]}"; do
