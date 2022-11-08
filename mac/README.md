@@ -95,34 +95,28 @@ bash ./docker.sh
 bash ./python.sh
 ```
 また、上記のスクリプトを利用する場合、`workspace`下のmultipassインスタンス名に対応するディレクトリがマウントされるように動作します。
-任意のディレクトリをマウントしたい・リソース割り振りを変更したい場合は上記バッチの代わりに各環境に対する下記のコマンドを`windows/multipass` ディレクトリ下で実行してください。(リソースのデフォルト値は`cpu: 2`, `disksize: 24[GByte]`, `memory: 4[GByte]`)
+任意のディレクトリをマウントしたい・リソース割り振りを変更したい場合は上記バッチの代わりに各環境に対する下記のコマンドを`windows/multipass` ディレクトリ下で実行してください。(リソースのデフォルト値は`cpu: 2`, `disksize: 24[GByte]`, `memory: 4[GByte]`, `ubuntu version: 22.04`)
 - c++環境
     ```sh
-    bash ./launch.sh cpp 2 24G 4G ../../config/multipass/cpp/cpp.yaml 22.04 <マウント対象ディレクトリへののフルパス> /home/ubuntu/synced-cpp
+    bash ./cpp.sh <任意のインスタンス名> <マウント対象ディレクトリへのフルパス> 2 24G 4G 22.04
     ```
 - cs環境(x64のみ)
     ```sh
-    bash ./launch.sh cs 2 24G 4G ../../config/multipass/cs/cs.yaml 22.04 <マウント対象ディレクトリへのフルパス> /home/ubuntu/synced-cs
+    bash ./cs.sh <任意のインスタンス名> <マウント対象ディレクトリへのフルパス> 2 24G 4G 22.04
     ```
 - nodejs環境
     ```sh
-    bash ./launch.sh nodejs 2 24G 4G ../../config/multipass/nodejs/nodejs.yaml 22.04 <マウント対象ディレクトリへのフルパス> /home/ubuntu/synced-nodejs
+    bash ./nodejs.sh <任意のインスタンス名> <マウント対象ディレクトリへのフルパス> 2 24G 4G 22.04
     ```
 - rust環境
     ```sh
-    bash ./launch.sh rust 2 24G 4G ../../config/multipass/rust/rust.yaml 22.04 <マウント対象ディレクトリへのフルパス> /home/ubuntu/synced-rust
+    bash ./rust.sh <任意のインスタンス名> <マウント対象ディレクトリへのフルパス> 2 24G 4G 22.04
     ```
 - docker環境
     ```sh
-    bash ./launch.sh docker 2 40G 4G ../../config/multipass/docker/docker.yaml 22.04 <マウント対象ディレクトリへのフルパス> /home/ubuntu/synced-docker
-    multipass exec docker -- mkdir /home/ubuntu/init
-    multipass transfer ../../config/multipass/docker/install-docker.sh docker:/home/ubuntu/init/
+    bash ./docker.sh <任意のインスタンス名> <マウント対象ディレクトリへのフルパス> 2 40G 4G 22.04
     ```
 - python環境
     ```sh
-    bash ./launch.sh python 2 24G 4G ../../config/multipass/python/python.yaml 22.04 <マウント対象ディレクトリへのフルパス> /home/ubuntu/synced-python
-    multipass exec python -- mkdir /home/ubuntu/init
-    multipass transfer ../../config/multipass/python/install-pyenv.sh python:/home/ubuntu/init/
-    multipass transfer ../../config/multipass/python/install-python.sh python:/home/ubuntu/init/
-    transfer ../../config/multipass/python/install-discord-bot.sh python:/home/ubuntu/init/
+    bash ./python.sh <任意のインスタンス名> <マウント対象ディレクトリへのフルパス> 2 24G 4G 22.04
     ```

@@ -2,24 +2,28 @@
 
 set -euo pipefail
 
-instance_name="docker"
+readonly enviroment_name="docker"
+readonly instance_name="${1:-${enviroment_name}}"
+readonly virtual_home="/home/ubuntu"
+readonly virtual_workspace_dir="${virtual_home}/synced-${instance_name}"
+
+# create workspace directory
 current_dir=$(pwd)
-cd "../../workspace/${instance_name}"
-local_workspace_dir=$(pwd)
-virtual_home="/home/ubuntu"
-virtual_workspace_dir="${virtual_home}/synced-${instance_name}"
+cd "../../workspace/${enviroment_name}"
+readonly local_workspace_dir="${2:-$(pwd)}"
+mkdir -p "${local_workspace_dir}/${instance_name}"
 
+# set config file path
 cd "${current_dir}"
-cd "../../config/multipass/${instance_name}"
+cd "../../config/multipass/${enviroment_name}"
 local_config_dir=$(pwd)
-init_files=("install-docker.sh")
 
 cd "${current_dir}"
-bash ./launch.sh "${instance_name}" "2" "40G" "4G" "${local_config_dir}/${instance_name}.yaml" "22.04" "${local_workspace_dir}" "${virtual_workspace_dir}"
+bash ./launch.sh "${instance_name}" "${3:-2}" "${4:-40G}" "${5:-4G}" "../../config/multipass/${enviroment_name}/${enviroment_name}.yaml" "${6:-22.04}" "${local_workspace_dir}" "${virtual_workspace_dir}"
 sleep 10
 multipass start "${instance_name}"
 multipass exec "${instance_name}" -- mkdir "${virtual_home}/init"
-for i in "${init_files[@]}"; do
-    multipass transfer "${local_config_dir}/${i}" "${instance_name}:${virtual_home}/init/"
-done
+while read -r line; do
+    multipass transfer "${local_config_dir}/${line}" "${instance_name}:${virtual_home}/init/"
+done <"${local_config_dir}/init-files"
 multipass stop "${instance_name}"
