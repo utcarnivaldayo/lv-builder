@@ -2,5 +2,5 @@
 
 set -euo pipefail
 
-bash install.sh ../../config/vscode-extension/basic.csv
-bash install.sh ../../config/vscode-extension/cs.csv
+bash ./install.sh ../../config/vscode-extension/basic.csv
+bash ./install.sh ../../config/vscode-extension/cs.csv
