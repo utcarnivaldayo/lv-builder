@@ -104,32 +104,25 @@ multipassによりubuntu仮想環境を構築します。
 任意のディレクトリをマウントしたい・リソース割り振りを変更したい場合は上記バッチの代わりに各環境に対する下記のコマンドを`windows/multipass` ディレクトリ下で実行してください。(リソースのデフォルト値は`cpu: 2`, `disksize: 24[GByte]`, `memory: 4[GByte]`)
 - c++環境
     ```powershell
-    pwsh -ExecutionPolicy Bypass ./launch.ps1 cpp 2 24G 4G ../../config/multipass/cpp/cpp.yaml 22.04 <マウント対象フォルダへののフルパス> /home/ubuntu/synced-cpp
+    pwsh -ExecutionPolicy Bypass ./cpp.ps1 <任意のインスタンス名> <マウント対象フォルダへのフルパス(マウント対象ディレクトリの名前はインスタンス名と同名)> 2 24G 4G 22.04
     ```
 - cs環境(x64のみ)
     ```powershell
-    pwsh -ExecutionPolicy Bypass ./launch.ps1 cs 2 24G 4G ../../config/multipass/cs/cs.yaml 22.04 <マウント対象フォルダへのフルパス> /home/ubuntu/synced-cs
+    pwsh -ExecutionPolicy Bypass ./cs.ps1 <任意のインスタンス名> <マウント対象フォルダへのフルパス(マウント対象ディレクトリの名前はインスタンス名と同名)> 2 24G 4G 22.04
     ```
 - nodejs環境
     ```powershell
-    pwsh -ExecutionPolicy Bypass ./launch.ps1 nodejs 2 24G 4G ../../config/multipass/nodejs/nodejs.yaml 22.04 <マウント対象フォルダへのフルパス> /home/ubuntu/synced-nodejs
+    pwsh -ExecutionPolicy Bypass ./nodejs.ps1 <任意のインスタンス名> <マウント対象フォルダへのフルパス(マウント対象ディレクトリの名前はインスタンス名と同名)> 2 24G 4G 22.04
     ```
 - rust環境
     ```powershell
-    pwsh -ExecutionPolicy Bypass ./launch.ps1 rust 2 24G 4G ../../config/multipass/rust/rust.yaml 22.04 <マウント対象フォルダへのフルパス> /home/ubuntu/synced-rust
-
+    pwsh -ExecutionPolicy Bypass ./rust.ps1 <任意のインスタンス名> <マウント対象フォルダへのフルパス(マウント対象ディレクトリの名前はインスタンス名と同名)> 2 24G 4G 22.04
     ```
 - docker環境
     ```powershell
-    pwsh -ExecutionPolicy Bypass ./launch.ps1 docker 2 40G 4G ../../config/multipass/docker/docker.yaml 22.04 <マウント対象フォルダへのフルパス> /home/ubuntu/synced-docker
-    multipass exec docker -- mkdir /home/ubuntu/init
-    multipass transfer (Convert-Path ../../config/multipass/docker)/install-docker.sh docker:/home/ubuntu/init/
+    pwsh -ExecutionPolicy Bypass ./docker.ps1 <任意のインスタンス名> <マウント対象フォルダへのフルパス(マウント対象ディレクトリの名前はインスタンス名と同名)> 2 40G 4G 22.04
     ```
 - python環境
     ```powershell
-    pwsh -ExecutionPolicy Bypass ./launch.ps1 python 2 24G 4G ../../config/multipass/python/python.yaml 22.04 <マウント対象フォルダへのフルパス> /home/ubuntu/synced-python
-    multipass exec python -- mkdir /home/ubuntu/init
-    multipass transfer (Convert-Path ../../config/multipass/python)/install-pyenv.sh python:/home/ubuntu/init/
-    multipass transfer (Convert-Path ../../config/multipass/python)/install-python.sh python:/home/ubuntu/init/
-    multipass transfer (Convert-Path ../../config/multipass/python)/install-discord-bot.sh python:/home/ubuntu/init/
+    pwsh -ExecutionPolicy Bypass ./python.ps1 <任意のインスタンス名> <マウント対象ディレクトリへのフルパス(マウント対象ディレクトリの名前はインスタンス名と同名)> 2 24G 4G 22.04
     ```
