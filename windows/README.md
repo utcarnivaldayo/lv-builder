@@ -23,7 +23,7 @@ wingetでmsstoreからアプリケーションをインストールするには�
     ```powershell
     winget install -e --id Discord.Discord
     ``` 
-2. "すべてのソーズ条件に同意しますか？"と聞かれるので`Y`を入力
+2. "すべてのソース契約条件に同意しますか？"と聞かれるので`Y`を入力
 3. 既にDiscordがインストールされている状態であれば、`ctrl + C`でインストールをキャンセル
 ### 4. Hyper-vの有効化
 次の条件のいずれかを満たしている場合この作業は必要ありません。
@@ -31,13 +31,13 @@ Pro版の場合は下記の`Enable-WindowsOptionalFeature`コマンドでHyper-v
 
 - multipassによる仮想環境の構築が不要
 - Virtual Boxが既にインストール済み
-　
+
 1. `windows/multipass/enable-hyper-v.bat`を管理者権限で実行（この作業を行うとOSが再起動するため、`enable-hyper-v.bat`の実行前に他のアプリケーションを終了しておく）
 2. Hyper-vの有効化を次の手順で確認
 ![Hyper-vの有効化確認](./img/hyperv-enable-check.png)
     1. スタートを右クリック
     2. "アプリと機能"をクリック
-    3. "プログラムと機能"を選択
+    3. "プログラムと機能"を選択(このウィンドウは上記画像には載せていないので注意！)
     4. "Windowsの機能の有効化または無効化"をクリック
     5. "Hyper-V Hypervisor"にレ点が入っていることを確認
 
@@ -80,8 +80,12 @@ jebbs.plantuml
 
 
 ## 3. 仮想環境の構築
+※本ステップのみを行う場合、`winodows/winget`ディレクトリ下で下記バッチを実行し、multipassのインストールを事前に済ませて下さい。（1. ローカル環境構築を行なっている場合は不要）
+```powershell
+./multipass.bat
+```
 multipassによりubuntu仮想環境を構築します。
-`windows/multipas`ディレクトリ下の各バッチ`cpp.bat` / `cs.bat` / `nodejs.bat` / `rust.bat` / `docker.bat` / `python.bat`を管理者として開いたpowershellからコマンド実行することでc++ / cs / nodejs / rust / docker / pythonの仮想環境をそれぞれ構築できます。
+`windows/multipas`ディレクトリ下の各バッチ`cpp.bat` / `cs.bat` / `nodejs.bat` / `rust.bat` / `docker.bat` / `python.bat`を管理者として開いたpowershellからコマンド実行することでc++ / cs / nodejs / rust / docker / pythonの仮想環境をそれぞれ構築できます。（また、バッチにより新しく追加された環境変数を確実に有効化するため、現在起動しているpowershellを全て閉じてから、管理者権限でpowershellを実行して下さい。）
 ```powershell
 ./cpp.bat
 ```
