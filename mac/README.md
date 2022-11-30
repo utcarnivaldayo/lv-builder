@@ -18,6 +18,7 @@ google-chrome
 discord
 git
 gh
+unity-hub
 visual-studio-code
 multipass
 iterm2

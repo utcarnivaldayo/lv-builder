@@ -9,7 +9,7 @@
 
 
 ### 2. powershell7のインストール
-システムのpowershellは新しいpowershellを利用することを推奨しているため（powershell7が既にインストールされている場合にはこの作業は不要）
+システムのpowershellは新しいpowershellを利用することを推奨しているためpowershell7のインストールを行います。（powershell7が既にインストールされている場合にはこの作業は不要）
 
 システム内蔵のpowershellを起動し、次のコマンドを実行してください。
 ```powershell
@@ -53,6 +53,7 @@ Discord.Discord
 WinSCP.WinSCP
 Git.Git
 GitHub.cli
+UnityTechnologies.UnityHub
 Microsoft.VisualStudioCode
 Canonical.Multipass
 ```
